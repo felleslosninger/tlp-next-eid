@@ -1,0 +1,11 @@
+{
+  "git.rebaseWhenSync": true,
+  "git.autofetch": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cssvar.files": [
+    "node_modules/@altinn/figma-design-tokens/dist/tokens.css",
+  ]
+}
