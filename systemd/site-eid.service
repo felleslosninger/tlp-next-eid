@@ -1,0 +1,15 @@
+[Unit]
+Description=NodeJS server, NextJS public frontend for eid site
+After=network.target
+
+[Service]
+Type=simple
+User=nextjs
+Group=nextjs
+Restart=on-failure
+RestartSec=10
+WorkingDirectory=/opt/nextjs/tlp-next-eid
+ExecStart=/var/lib/difi/nextjs/.local/share/pnpm/pnpm start -p 3000
+
+[Install]
+WantedBy=multi-user.target
