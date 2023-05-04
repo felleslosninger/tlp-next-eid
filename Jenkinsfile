@@ -43,7 +43,7 @@ pipeline {
                             sh "/var/lib/jenkins/.local/share/pnpm/pnpm build"
                         }
 
-                        sh "packaging/bin/deb nextjs-site-eid"
+                        sh "packaging/bin/deb nextjs-site-eid nextjs-site-eid eid"
                     }
                 }
 
