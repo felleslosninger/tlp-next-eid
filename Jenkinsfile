@@ -36,14 +36,13 @@ pipeline {
                     }
                 }
 
-                stage('Build') {
+                stage('Build') {                    
                     steps {
                         dir('scripts') {
                             sh "pnpm install"
                             sh "pnpm build"
-                        }                    
-                    }                    
-                    steps {
+                        }
+                                                
                         sh "packaging/bin/deb nextjs-site-eid"
                     }
                 }
