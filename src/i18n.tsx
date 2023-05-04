@@ -19,9 +19,10 @@ const resources = {
   },
 };
 
-i18next.use(initReactI18next).init({
+void i18next.use(initReactI18next).init({
   resources,
   lng: 'nb', //default language
+  fallbackLng: 'nb',
 });
 
 export default i18next;

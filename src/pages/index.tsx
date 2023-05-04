@@ -13,9 +13,14 @@ import '@altinn/figma-design-tokens/dist/tokens.css';
 export default function Home() {
   const { t, i18n } = useTranslation(['main']);
 
-  const onClickLanguageChange = (e: any) => {
-    const language = e.target.value;
-    void i18n.changeLanguage(language); //change the language
+  const onClickLanguageChange = (
+    e:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    if (typeof e.currentTarget.value === 'string') {
+      void i18n.changeLanguage(e.currentTarget.value);
+    }
   };
 
   return (
@@ -38,7 +43,13 @@ export default function Home() {
       <main className={`${inter.className}`}>
         <h2>Next.js app</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
-        <Button size='medium'>Click here</Button>
+        <Button
+          size='medium'
+          value='en'
+          onClick={onClickLanguageChange}
+        >
+          Click here
+        </Button>
         <select
           className='custom-select'
           style={{ width: 200 }}
@@ -50,7 +61,7 @@ export default function Home() {
         </select>
 
         <div className='paraStyle'>
-          {t('tomat', { ns: ['main'] })} <br />
+          {t('tomat')} <br />
         </div>
       </main>
       <Footer />
