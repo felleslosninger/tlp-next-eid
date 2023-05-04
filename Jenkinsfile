@@ -38,11 +38,11 @@ pipeline {
 
                 stage('Build') {                    
                     steps {
-                        dir('scripts') {
+                        dir('next-eid') {
                             sh "pnpm install"
                             sh "pnpm build"
                         }
-                                                
+
                         sh "packaging/bin/deb nextjs-site-eid"
                     }
                 }
