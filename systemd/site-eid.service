@@ -8,7 +8,7 @@ User=nextjs
 Group=nextjs
 Restart=on-failure
 RestartSec=10
-WorkingDirectory=/opt/nextjs/tlp-next-eid
+WorkingDirectory=/opt/nextjs/next-eid
 ExecStart=/var/lib/difi/nextjs/.local/share/pnpm/pnpm start -p 3000
 
 [Install]
