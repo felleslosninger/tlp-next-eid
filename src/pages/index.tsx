@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import { Button } from '@digdir/design-system-react';
+import { useTranslation } from 'react-i18next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,6 +11,13 @@ import { Footer } from '@/components/Footer/Footer';
 import '@altinn/figma-design-tokens/dist/tokens.css';
 
 export default function Home() {
+  const { t, i18n } = useTranslation(['main']);
+
+  const onClickLanguageChange = (e: any) => {
+    const language = e.target.value;
+    void i18n.changeLanguage(language); //change the language
+  };
+
   return (
     <>
       <Head>
@@ -31,6 +39,19 @@ export default function Home() {
         <h2>Next.js app</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
         <Button size='medium'>Click here</Button>
+        <select
+          className='custom-select'
+          style={{ width: 200 }}
+          onChange={onClickLanguageChange}
+        >
+          <option value='nb'>Norsk</option>
+          <option value='en'>English</option>
+          <option value='sa'>sámegiella</option>
+        </select>
+
+        <div className='paraStyle'>
+          {t('tomat', { ns: ['main'] })} <br />
+        </div>
       </main>
       <Footer />
     </>
