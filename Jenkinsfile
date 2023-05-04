@@ -39,8 +39,8 @@ pipeline {
                 stage('Build') {                    
                     steps {
                         dir('next-eid') {
-                            sh "pnpm install"
-                            sh "pnpm build"
+                            sh "/var/lib/jenkins/.local/share/pnpm/pnpm install"
+                            sh "/var/lib/jenkins/.local/share/pnpm/pnpm build"
                         }
 
                         sh "packaging/bin/deb nextjs-site-eid"
