@@ -43,7 +43,7 @@ export default function Home() {
         />
       </Head>
       <main className={`${inter.className}`}>
-        <h2>Next.js app</h2>
+        <h2>Next.js app for eid hjelpesider</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
         <Button
           size='medium'
