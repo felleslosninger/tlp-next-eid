@@ -3,8 +3,11 @@ import { Inter } from 'next/font/google';
 import React from 'react';
 import { Button } from '@digdir/design-system-react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Footer } from '@/components/Footer/Footer';
+
+import { useAppSelector } from '../store/hooks';
 
 import { changeLanguage } from './../i18n';
 
@@ -14,6 +17,7 @@ import '@altinn/figma-design-tokens/dist/tokens.css';
 
 export default function Home() {
   const { t } = useTranslation(['main']);
+  const activePage = useAppSelector((state) => state.activePage);
 
   const onClickLanguageChange = (
     e:
@@ -43,7 +47,7 @@ export default function Home() {
         />
       </Head>
       <main className={`${inter.className}`}>
-        <h2>Next.js app</h2>
+        <h2>{activePage.content.node.title}</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
         <Button
           size='medium'
