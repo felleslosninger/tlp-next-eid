@@ -31,7 +31,7 @@ pipeline {
                         }
 
                         dir('next-eid') {
-                            git poll: false, changelog: false, branch: "${env.BRANCH_NAME}", url: 'git@github.com:felleslosninger/tlp-next-eid.git', credentialsId: 'tlp-github-build-user'
+                            git branch: "${env.BRANCH_NAME}", url: 'git@github.com:felleslosninger/tlp-next-eid.git', credentialsId: 'tlp-github-build-user'
                         }
                     }
                 }
