@@ -4,14 +4,16 @@ import React from 'react';
 import { Button } from '@digdir/design-system-react';
 import { useTranslation } from 'react-i18next';
 
-const inter = Inter({ subsets: ['latin'] });
-
 import { Footer } from '@/components/Footer/Footer';
+
+import { changeLanguage } from './../i18n';
+
+const inter = Inter({ subsets: ['latin'] });
 
 import '@altinn/figma-design-tokens/dist/tokens.css';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['main']);
+  const { t } = useTranslation(['main']);
 
   const onClickLanguageChange = (
     e:
@@ -19,7 +21,7 @@ export default function Home() {
       | React.MouseEvent<HTMLButtonElement>,
   ) => {
     if (typeof e.currentTarget.value === 'string') {
-      void i18n.changeLanguage(e.currentTarget.value);
+      changeLanguage(e.currentTarget.value);
     }
   };
 
