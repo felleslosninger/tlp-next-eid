@@ -9,7 +9,8 @@ Group=nextjs
 Restart=on-failure
 RestartSec=10
 WorkingDirectory=/opt/nextjs/next-eid
-ExecStart=/var/lib/difi/nextjs/.local/share/pnpm/pnpm start -p 3000
+ExecStart=node server.js
+Environment="PORT=3000"
 
 [Install]
 WantedBy=multi-user.target
