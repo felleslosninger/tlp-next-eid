@@ -28,6 +28,9 @@ dependencies:
   '@digdir/design-system-tokens':
     specifier: ^0.0.3
     version: 0.0.3
+  '@digdir/tlp-react':
+    specifier: ^0.1.0
+    version: 0.1.0(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
   '@navikt/aksel-icons':
     specifier: ^2.9.3
     version: 2.9.3
@@ -1679,6 +1682,21 @@ packages:
 
   /@digdir/design-system-tokens@0.0.3:
     resolution: {integrity: sha512-gfmUOuLsZ8rm/T9P81rVCxTa97DWtekp3ii9Joo520NB7KGJLQZeAqx+vKtkLy7a+QyKmtGwWjoXTHDjqF8wYg==}
+    dev: false
+
+  /@digdir/tlp-react@0.1.0(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JWEBikeYjl+0P8M/1ABy4bBioXQx9fvOYXEs7av/6Qd4iF6BM67YEDOAA0unSQZuk4tIpI8YJrRgXK9+KU7vAw==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@altinn/figma-design-tokens': 6.0.1
+      '@digdir/design-system-tokens': 0.0.3
+      '@navikt/ds-icons': 2.9.3(@types/react@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.22.0):
