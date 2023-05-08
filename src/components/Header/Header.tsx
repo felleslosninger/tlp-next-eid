@@ -13,7 +13,7 @@ const Header = ({ title }: HeaderProps) => {
   const { t } = useTranslation(['main']);
   return (
     <header className={classes.header}>
-      <div>{title}</div>
+      <div className={classes.title}>{title}</div>
       {t('tomat')}
     </header>
   );
