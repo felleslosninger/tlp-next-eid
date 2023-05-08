@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import React from 'react';
 import { Button } from '@digdir/design-system-react';
 import { useTranslation } from 'react-i18next';
-//import { useDispatch, useSelector } from 'react-redux';
 
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
