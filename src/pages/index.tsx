@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
 import React from 'react';
 import { Button } from '@digdir/design-system-react';
 import { useTranslation } from 'react-i18next';
@@ -10,8 +9,6 @@ import { Header } from '@/components/Header/Header';
 import { useAppSelector } from '../store/hooks';
 
 import { changeLanguage } from './../i18n';
-
-const inter = Inter({ subsets: ['latin'] });
 
 import '@altinn/figma-design-tokens/dist/tokens.css';
 
@@ -47,7 +44,7 @@ export default function Home() {
         />
       </Head>
       <Header title={activePage.header.title} />
-      <main className={`${inter.className}`}>
+      <main>
         <h2>{activePage.content.node.title}</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
         <Button
