@@ -12,16 +12,27 @@ interface ContentProps {
     ingress: string;
   };
 }
+
+interface HeaderProps {
+  title: string;
+  logo: { alt: string; url: string };
+  items?: [];
+}
+
+interface FooterProps {
+  items?: [];
+}
+
 interface ActivePageState {
   head: HeadDataProps;
-  header: {};
+  header: HeaderProps;
   content: ContentProps;
-  footer: {};
+  footer: FooterProps;
 }
 
 const initialState: ActivePageState = {
   head: { meta: [], title: '' },
-  header: { logo: { alt: '', url: '' }, items: [] },
+  header: { title: 'title', logo: { alt: '', url: '' }, items: [] },
   content: {
     node: {
       title: 'Nexit.js app',

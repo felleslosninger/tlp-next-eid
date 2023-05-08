@@ -3,9 +3,10 @@ import { Inter } from 'next/font/google';
 import React from 'react';
 import { Button } from '@digdir/design-system-react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+//import { useDispatch, useSelector } from 'react-redux';
 
 import { Footer } from '@/components/Footer/Footer';
+import { Header } from '@/components/Header/Header';
 
 import { useAppSelector } from '../store/hooks';
 
@@ -46,6 +47,7 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
+      <Header title={activePage.header.title} />
       <main className={`${inter.className}`}>
         <h2>{activePage.content.node.title}</h2>
         <h3>Her er ein knapp frå designsystemet</h3>
