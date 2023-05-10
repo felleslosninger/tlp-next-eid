@@ -1,19 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-
-import { Footer } from '@/components/Footer/Footer';
-import { Header } from '@/components/Header/Header';
-
-import { useAppSelector } from '../store/hooks';
 
 import '@altinn/figma-design-tokens/dist/tokens.css';
 import { Layout } from './Layout';
 
 export default function Home() {
-  const activePage = useAppSelector((state) => state.activePage);
-  const { t } = useTranslation(['main']);
-
   return (
     <>
       <Head>
@@ -31,15 +22,7 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
-      <Layout>
-        <Header title={activePage.header.title} />
-        <main>
-          <h2 className='paraStyle'>
-            {t('tomat')} <br />
-          </h2>
-        </main>
-        <Footer />
-      </Layout>
+      <Layout />
     </>
   );
 }

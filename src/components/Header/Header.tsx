@@ -1,5 +1,6 @@
 import React from 'react';
 //import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { Container } from '../Container.tsx/Container';
 import { useAppSelector } from '../../store/hooks';
@@ -13,7 +14,8 @@ interface HeaderProps {
   items?: [React.ReactNode];
 }
 
-const Header = ({ title }: HeaderProps) => {
+const Header = ({ items }: HeaderProps) => {
+  const { t } = useTranslation(['main']);
   const activePage = useAppSelector((state) => state.activePage);
   const onClickLanguageChange = (
     e:
@@ -27,16 +29,23 @@ const Header = ({ title }: HeaderProps) => {
   return (
     <header className={classes.header}>
       <Container>
-        <h1 className={classes.title}>{activePage.content.node.title}</h1>
-        <select
-          className='custom-select'
-          style={{ width: 200 }}
-          onChange={onClickLanguageChange}
-        >
-          <option value='nb'>Norsk</option>
-          <option value='en'>English</option>
-          <option value='sa'>sámegiella</option>
-        </select>
+        <div>
+          <h1 className={classes.title}>
+            <span>{t(activePage.header.title)}</span>
+          </h1>
+        </div>
+        <div>
+          {items}
+          <select
+            className='custom-select'
+            style={{ width: 200 }}
+            onChange={onClickLanguageChange}
+          >
+            <option value='nb'>Norsk</option>
+            <option value='en'>English</option>
+            <option value='sa'>sámegiella</option>
+          </select>
+        </div>
       </Container>
     </header>
   );

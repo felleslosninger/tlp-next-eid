@@ -32,10 +32,10 @@ interface ActivePageState {
 
 const initialState: ActivePageState = {
   head: { meta: [], title: '' },
-  header: { title: 'title', logo: { alt: '', url: '' }, items: [] },
+  header: { title: 'PageTitle', logo: { alt: '', url: '' }, items: [] },
   content: {
     node: {
-      title: 'Nexit.js app',
+      title: '',
       ingress: '',
     },
   },
