@@ -4,13 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 
+import classes from './Layout.module.css';
+
 /*interface LayoutProps {
   children?: React.ReactNode;
 }*/
 const Layout = () => {
   const { t } = useTranslation(['main']);
   return (
-    <div>
+    <div className={classes.layoutContainer}>
       <Header />
       <main>
         <h2 className='paraStyle'>
