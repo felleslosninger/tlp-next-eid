@@ -1,9 +1,12 @@
 .header {
-  background-color: aliceblue;
-  font-weight: 600;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
 }
 
 .title {
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
 }
