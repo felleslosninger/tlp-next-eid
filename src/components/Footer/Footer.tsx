@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@digdir/tlp-react';
 
 import classes from './Footer.module.css';
-import { Container } from '../Container.tsx/Container';
 
 interface FooterProps {
   text?: string;

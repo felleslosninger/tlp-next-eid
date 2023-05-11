@@ -1,8 +1,8 @@
 import React from 'react';
 //import { useTranslation } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@digdir/tlp-react';
 
-import { Container } from '../Container.tsx/Container';
 import { useAppSelector } from '../../store/hooks';
 
 import classes from './Header.module.css';

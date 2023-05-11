@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import '@altinn/figma-design-tokens/dist/tokens.css';
-import { Layout } from './Layout';
+import { Layout } from '../layout/Layout';
 
 export default function Home() {
   return (
