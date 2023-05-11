@@ -12,14 +12,20 @@ const Layout = () => {
   return (
     <div className={classes.layoutContainer}>
       <Header />
-      <main>
+      <main className={classes.mainLayout}>
         <Breadcrumb>
           <a href='#'>Første side</a>
           <p>Siste side</p>
         </Breadcrumb>
         <Container>
-          <Sidebar />
-          <Content />
+          <div className={classes.mainLayout}>
+            <div className={classes.layoutLeft}>
+              <Sidebar />
+            </div>
+            <div className={classes.layoutLeft}>
+              <Content />
+            </div>
+          </div>
         </Container>
       </main>
       <Footer />

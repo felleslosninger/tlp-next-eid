@@ -1,10 +1,6 @@
 import React from 'react';
 
-interface SidebarProps {
-  children?: React.ReactNode;
-}
-
-const Sidebar = ({ children }: SidebarProps) => {
+const Sidebar = () => {
   return (
     <div>
       <form>
