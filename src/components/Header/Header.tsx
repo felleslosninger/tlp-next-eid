@@ -28,22 +28,24 @@ const Header = ({ items }: HeaderProps) => {
   return (
     <header className={classes.header}>
       <Container>
-        <div>
-          <h1 className={classes.title}>
-            <span>{t(activePage.header.title)}</span>
-          </h1>
-        </div>
-        <div>
-          {items}
-          <select
-            className='custom-select'
-            style={{ width: 200 }}
-            onChange={onClickLanguageChange}
-          >
-            <option value='nb'>Norsk</option>
-            <option value='en'>English</option>
-            <option value='sa'>sámegiella</option>
-          </select>
+        <div className={classes.container}>
+          <div className={classes.left}>
+            <h1 className={classes.title}>
+              <span>{t(activePage.header.title)}</span>
+            </h1>
+          </div>
+          <div className={classes.right}>
+            {items}
+            <select
+              className='custom-select'
+              style={{ width: 200 }}
+              onChange={onClickLanguageChange}
+            >
+              <option value='nb'>Norsk</option>
+              <option value='en'>English</option>
+              <option value='sa'>sámegiella</option>
+            </select>
+          </div>
         </div>
       </Container>
     </header>

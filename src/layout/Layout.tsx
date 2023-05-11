@@ -10,19 +10,20 @@ import classes from './Layout.module.css';
 
 const Layout = () => {
   return (
-    <div className={classes.layoutContainer}>
+    <div className={classes.layout}>
       <Header />
-      <main className={classes.mainLayout}>
-        <Breadcrumb>
-          <a href='#'>Første side</a>
-          <p>Siste side</p>
-        </Breadcrumb>
-        <Container>
-          <div className={classes.mainLayout}>
-            <div className={classes.layoutLeft}>
+      <main className={classes.main}>
+        <Container className={classes.container}>
+          <Breadcrumb>
+            <a href='#'>Første side</a>
+            <p>Siste side</p>
+          </Breadcrumb>
+
+          <div className={classes.wrapper}>
+            <div className={classes.sidebar}>
               <Sidebar />
             </div>
-            <div className={classes.layoutLeft}>
+            <div className={classes.content}>
               <Content />
             </div>
           </div>

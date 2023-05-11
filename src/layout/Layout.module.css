@@ -1,24 +1,29 @@
-.layoutContainer {
+.layout {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
 
-.mainLayout {
+.main {
+  margin-bottom: auto;
+}
+
+.wrapper {
   margin-bottom: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 50px;
+  margin-top: 40px;
 }
 
-.layoutLeft {
+.sidebar {
   flex-basis: 220px;
   flex-grow: 1;
 }
 
-.layoutRight {
+.content {
   flex-basis: 600px;
   flex-grow: 500;
 }

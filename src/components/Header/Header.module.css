@@ -1,5 +1,5 @@
 .header {
-  height: 96px;
+  height: 88px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #dbdbdb;
@@ -7,6 +7,12 @@
 }
 
 .title {
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
