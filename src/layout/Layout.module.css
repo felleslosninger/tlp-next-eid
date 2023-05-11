@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.main {
+  margin-bottom: auto;
+}
+
+.wrapper {
+  margin-bottom: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.sidebar {
+  flex-basis: 220px;
+  flex-grow: 1;
+}
+
+.content {
+  flex-basis: 600px;
+  flex-grow: 500;
+}
