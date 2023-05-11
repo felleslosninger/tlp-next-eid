@@ -36,7 +36,8 @@ const initialState: ActivePageState = {
   content: {
     node: {
       title: '',
-      ingress: '',
+      ingress:
+        '<h2>Id porten</h2> <p>ID-porten er en felles innloggingsløsning til offentlige tjenester på internett. ID-porten gir tilgang til over 1000 tjenester fra stat og kommune. ID-porten blir driftet av Digitaliseringsdirektoratet.</p><a href="https://www.google.com/">lenke</a> <a href="http://localhost:3000/intern">Link</a>',
     },
   },
   footer: { items: [] },
