@@ -41,6 +41,4 @@ const Sidebar = () => {
     </div>
   );
 };
-
-export type { SidebarProps };
 export { Sidebar };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Breadcrumb } from '@digdir/tlp-react';
+import { Container } from '@/components/Container/Container';
 
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
@@ -14,11 +14,6 @@ const Layout = () => {
       <Header />
       <main className={classes.main}>
         <Container className={classes.container}>
-          <Breadcrumb>
-            <a href='#'>Første side</a>
-            <p>Siste side</p>
-          </Breadcrumb>
-
           <div className={classes.wrapper}>
             <div className={classes.sidebar}>
               <Sidebar />
