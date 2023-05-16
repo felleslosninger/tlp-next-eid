@@ -1,10 +1,16 @@
-import Link from 'next/link';
 import React from 'react';
+import { statusHandler } from '@/utils/buildUrl';
 
 import { GetPage } from '@/services/PageService';
-export default async function Home({ params }) {
-  //console.log(params);
-  const data = await GetPage(params);
+//import { statusHandler } from '@/utils/buildUrl';
+import type { ApiDataType, ParamsType } from '@/types/ApiData';
+
+export default async function Page(params: ParamsType) {
+  const response: Response = await GetPage(params);
+
+  await statusHandler(response);
+
+  const data: ApiDataType = await response.json();
 
   return (
     <>

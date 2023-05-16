@@ -23,6 +23,12 @@ const Sidebar = () => {
         <li>
           <Link href='/nb/minid-passport'>Passport</Link>
         </li>
+        <li>
+          <Link href='/nb/minid-passpgergregerort'>Not Found</Link>
+        </li>
+        <li>
+          <Link href='/nb/hva-er-mitt-einnsyn'>Redirect</Link>
+        </li>
       </ul>
     </div>
   );
