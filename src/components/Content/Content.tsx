@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Content = () => {
-  return <div>Content</div>;
+const Content = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export { Content };

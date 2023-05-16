@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Sidebar = () => {
   return (
@@ -11,31 +12,16 @@ const Sidebar = () => {
       </form>
       <ul>
         <li>
-          <a href='#'>Lenke</a>
+          <Link href='/nb'>FrontPage</Link>
         </li>
         <li>
-          <a href='#'>Lenke</a>
+          <Link href='/nb/search'>Search</Link>
         </li>
         <li>
-          <a href='#'>Lenke</a>
+          <Link href='/nb/id-porten'>Bank ID</Link>
         </li>
         <li>
-          <a href='#'>Lenke</a>
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <a href='#'>Lenke</a>
-        </li>
-        <li>
-          <a href='#'>Lenke</a>
-        </li>
-        <li>
-          <a href='#'>Lenke</a>
-        </li>
-        <li>
-          <a href='#'>Lenke</a>
+          <Link href='/nb/minid-passport'>Passport</Link>
         </li>
       </ul>
     </div>

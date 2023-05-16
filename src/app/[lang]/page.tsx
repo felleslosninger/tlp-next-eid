@@ -1,23 +1,24 @@
-import { Layout } from '@/layout/Layout';
+//import { Layout } from '@/layout/Layout';
 import React from 'react';
+import Link from 'next/link';
+
 import { GetPage } from '@/services/PageService';
 
-import 'normalize.css';
-import '@altinn/figma-design-tokens/dist/tokens.css';
-import '@digdir/design-system-tokens/dist/digdir/tokens.css';
-import '@digdir/tlp-react/dist/tokens.css';
-
-async function getData() {
-  const data = await GetPage();
-  console.log(data);
-  return data;
-}
-
-export default async function Home() {
-  let data = await getData();
+export default async function Home({ params }) {
+  //console.log(params);
+  const data = await GetPage(params);
   return (
     <>
       <h1>{data.content.node.title}</h1>
+      <ul>
+        <li>
+          <Link href='/nb/any'>Any</Link>
+        </li>
+        <li>
+          <Link href='/nb/search'>Search</Link>
+        </li>
+      </ul>
+      <p>{data.content.node.body}</p>
     </>
   );
 }

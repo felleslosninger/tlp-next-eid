@@ -1,9 +1,15 @@
+import Link from 'next/link';
 import React from 'react';
 
-export default function Home() {
+import { GetPage } from '@/services/PageService';
+export default async function Home({ params }) {
+  //console.log(params);
+  const data = await GetPage(params);
+
   return (
     <>
-      <h2>any route</h2>
+      <h1>{data.content.node.title}</h1>
+      <p>{data.content.node.body}</p>
     </>
   );
 }

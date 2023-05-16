@@ -8,7 +8,7 @@ import { Content } from '../components/Content/Content';
 
 import classes from './Layout.module.css';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div className={classes.layout}>
       <Header />
@@ -19,7 +19,7 @@ const Layout = () => {
               <Sidebar />
             </div>
             <div className={classes.content}>
-              <Content />
+              <Content>{children}</Content>
             </div>
           </div>
         </Container>
