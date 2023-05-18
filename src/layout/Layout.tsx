@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Container } from '@/components/Container/Container';
 
-import { Footer } from '../components/Footer/Footer';
-import { Header } from '../components/Header/Header';
+import { FooterLayout } from '../components/FooterLayout/FooterLayout';
+import { HeaderLayout } from '../components/Header/Header';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Content } from '../components/Content/Content';
 
@@ -11,7 +12,7 @@ import classes from './Layout.module.css';
 const Layout = ({ children }) => {
   return (
     <div className={classes.layout}>
-      <Header />
+      <HeaderLayout />
       <main className={classes.main}>
         <Container className={classes.container}>
           <div className={classes.wrapper}>
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
           </div>
         </Container>
       </main>
-      <Footer />
+      <FooterLayout />
     </div>
   );
 };

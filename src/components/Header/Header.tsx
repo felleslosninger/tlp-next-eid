@@ -1,6 +1,9 @@
-import React from 'react';
+/* eslint-disable @next/next/no-img-element */
+'use client';
 
-import { Container } from '../Container/Container';
+import React from 'react';
+import { Header } from '@digdir/tlp-react';
+import Link from 'next/link';
 
 import classes from './Header.module.css';
 
@@ -10,30 +13,32 @@ interface HeaderProps {
   items?: [React.ReactNode];
 }
 
-const Header = ({ items }: HeaderProps) => {
+const HeaderLayout = ({ items }: HeaderProps) => {
   return (
-    <header className={classes.header}>
-      <Container>
-        <div className={classes.container}>
-          <div className={classes.left}>
-            <h1 className={classes.title}>title</h1>
-          </div>
-          <div className={classes.right}>
-            {items}
-            <select
-              className='custom-select'
-              style={{ width: 200 }}
-            >
-              <option value='nb'>Norsk</option>
-              <option value='en'>English</option>
-              <option value='sa'>sámegiella</option>
-            </select>
-          </div>
-        </div>
-      </Container>
-    </header>
+    <Header>
+      <Header.Left>
+        <Link href='/nb'>
+          <img
+            src='img/logo-eid-black.svg'
+            alt='Logo'
+            className={classes.logo}
+          />
+        </Link>
+      </Header.Left>
+      <Header.Right>
+        {items}
+        <select
+          className='custom-select'
+          style={{ width: 200 }}
+        >
+          <option value='nb'>Norsk</option>
+          <option value='en'>English</option>
+          <option value='sa'>sámegiella</option>
+        </select>
+      </Header.Right>
+    </Header>
   );
 };
 
 export type { HeaderProps };
-export { Header };
+export { HeaderLayout };

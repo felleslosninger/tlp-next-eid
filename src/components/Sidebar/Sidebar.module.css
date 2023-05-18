@@ -1,3 +1,31 @@
 .sidebar {
   display: block;
 }
+
+.menu {
+  padding: 0;
+  margin: 0;
+  margin-left: -14px;
+  margin-top: 32px;
+}
+
+.item {
+  list-style: none;
+}
+
+.item a {
+  padding: 12px 16px;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.1s all;
+}
+
+.active a {
+  background-color: #e6eff8;
+}
+
+.item a:hover {
+  background-color: #e9eaec;
+}

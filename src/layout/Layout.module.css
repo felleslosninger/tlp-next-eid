@@ -14,12 +14,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 56px;
   margin-top: 40px;
 }
 
 .sidebar {
-  flex-basis: 220px;
+  flex-basis: 270px;
   flex-grow: 1;
 }
 

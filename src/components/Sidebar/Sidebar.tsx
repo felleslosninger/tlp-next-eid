@@ -1,35 +1,66 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import cn from 'classnames';
+
+import { Input } from '../Input/Input';
+
+import classes from './Sidebar.module.css';
+
+const Menu = [
+  {
+    items: [
+      {
+        text: 'ID-porten',
+        href: '/nb/id-porten',
+      },
+      {
+        text: 'Search',
+        href: '/nb/search',
+      },
+      {
+        text: 'Passport',
+        href: '/nb/minid-passport',
+      },
+      {
+        text: 'Not found',
+        href: '/nb/minid-passpgergregerort',
+      },
+      {
+        text: 'Redirect',
+        href: '/nb/hva-er-mitt-einnsyn',
+      },
+    ],
+  },
+];
 
 const Sidebar = () => {
+  const pathName = usePathname();
   return (
     <div>
       <form>
-        <input
-          type='search'
-          placeholder='søk'
-        />
+        <Input />
       </form>
-      <ul>
-        <li>
-          <Link href='/nb'>FrontPage</Link>
-        </li>
-        <li>
-          <Link href='/nb/search'>Search</Link>
-        </li>
-        <li>
-          <Link href='/nb/id-porten'>Bank ID</Link>
-        </li>
-        <li>
-          <Link href='/nb/minid-passport'>Passport</Link>
-        </li>
-        <li>
-          <Link href='/nb/minid-passpgergregerort'>Not Found</Link>
-        </li>
-        <li>
-          <Link href='/nb/hva-er-mitt-einnsyn'>Redirect</Link>
-        </li>
-      </ul>
+
+      {Menu.map((item, index) => (
+        <ul
+          key={index}
+          className={classes.menu}
+        >
+          {item.items.map((item1, index1) => (
+            <li
+              key={index1}
+              className={cn(classes.item, {
+                [classes.active]: pathName === item1.href,
+              })}
+            >
+              <Link href={item1.href}>{item1.text}</Link>
+            </li>
+          ))}
+        </ul>
+      ))}
     </div>
   );
 };
