@@ -1,6 +1,6 @@
-import { redirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
-import type { ParamsType } from '@/types/ApiData';
+import type { ApiDataType, ParamsType } from '@/types/ApiData';
 
 export const buildUrl = ({ params }: ParamsType) => {
   let currentSlug = '&path=/';
@@ -10,15 +10,20 @@ export const buildUrl = ({ params }: ParamsType) => {
   return currentSlug;
 };
 
-export const statusHandler = async (response: Response) => {
-  /*if (response.status === 404) {
-    notFound();
-  }*/
-  if (response.status === 301 || response.status === 304) {
-    //const data: any = await response.json();
-    //const destination: any = data.content.redirect.destination;
-    //console.log('fewgehbrthb', destination);
-    //redirect(nyTekst);
-    redirect('/nb/id-porten');
+/*export const statusHandler = async (response: Response) => {
+  console.log('Response:', response.status);
+  if (
+    response.status === 301 ||
+    response.status === 307 ||
+    response.status === 304
+  ) {
+    const data: any = await response.json();
+    const destination: any = data.content.redirect.destination;
+    const nyStreng: string = destination.replace(/\/eid\/nb\//, '');
+    //return redirect('/nb/' + nyStreng);
+    redirect('/nb/einnsyn/mitt-einnsyn');
+  } else {
+    const data: ApiDataType = await response.json();
+    return data;
   }
-};
+};*/

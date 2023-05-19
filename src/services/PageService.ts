@@ -1,11 +1,11 @@
 import type { ParamsType } from '@/types/ApiData';
 
 const buildPath = (slugs: string[]) => {
-  let currentSlug = '&path=/';
-  console.log('slug', slugs);
+  let currentSlug = '&path=';
   for (let i = 0; i < slugs.length; i++) {
-    currentSlug += slugs[i];
+    currentSlug += '/' + slugs[i];
   }
+  console.log('Current slug', currentSlug);
   return currentSlug;
 };
 
