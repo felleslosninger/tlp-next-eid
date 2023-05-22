@@ -10,7 +10,7 @@ export const buildUrl = ({ params }: ParamsType) => {
   return currentSlug;
 };
 
-/*export const statusHandler = async (response: Response) => {
+export const statusHandler = async (response: Response) => {
   console.log('Response:', response.status);
   if (
     response.status === 301 ||
@@ -26,4 +26,4 @@ export const buildUrl = ({ params }: ParamsType) => {
     const data: ApiDataType = await response.json();
     return data;
   }
-};*/
+};
