@@ -21,22 +21,11 @@ async function getData({ params }: ParamsType) {
     apiUrl += buildPath(params.slug);
   }
   const res = await fetch(apiUrl);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
-  // Recommendation: handle errors
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    if (res.status === 301 || res.status === 301) {
-      const data = await res.json();
-      const destination: any = data.content.redirect.destination;
-      const nyStreng: string = destination.replace(/\/eid\/nb\//, '');
-      redirect('/nb/' + nyStreng);
-    }
     if (res.status === 404) {
       notFound();
     }
-    //throw new Error('Failed to fetch data');
   }
 
   return res.json();
@@ -44,18 +33,14 @@ async function getData({ params }: ParamsType) {
 
 export default async function Page(params: ParamsType) {
   const data = await getData(params);
-  //const response: Response = await GetPage(params);
-  /*const data = await statusHandler(response);
-  const data: ApiDataType = await response.json();
-  if (response.status === 301 || response.status === 301) {
-    console.log(response.status);
+  console.log('Testtttt', data.content.redirect.status);
+  if (data.content.redirect.status === '301') {
+    console.log('Redirect');
     const destination: any = data.content.redirect.destination;
     const nyStreng: string = destination.replace(/\/eid\/nb\//, '');
+    console.log(nyStreng);
     redirect('/nb/' + nyStreng);
   }
-  if (response.status === 404) {
-    notFound();
-  }*/
 
   return (
     <>
