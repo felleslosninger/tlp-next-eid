@@ -19,7 +19,7 @@ const HeaderLayout = ({ items }: HeaderProps) => {
       <Header.Left>
         <Link href='/nb'>
           <img
-            src='img/logo-eid-black.svg'
+            src='/../img/logo-eid-black.svg'
             alt='Logo'
             className={classes.logo}
           />

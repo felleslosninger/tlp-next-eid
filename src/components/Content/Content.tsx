@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Content = ({ children }) => {
+interface ContentProps {
+  children: React.ReactNode;
+}
+
+const Content = ({ children }: ContentProps) => {
   return <div>{children}</div>;
 };
 

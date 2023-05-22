@@ -7,9 +7,13 @@ import { HeaderLayout } from '../components/Header/Header';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Content } from '../components/Content/Content';
 
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
 import classes from './Layout.module.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={classes.layout}>
       <HeaderLayout />
