@@ -1,13 +1,7 @@
-import type { ParamsType } from '@/types/ApiData';
+import { notFound, redirect } from 'next/navigation';
 
-const buildPath = (slugs: string[]) => {
-  let currentSlug = '&path=';
-  for (let i = 0; i < slugs.length; i++) {
-    currentSlug += '/' + slugs[i];
-  }
-  console.log('Current slug', currentSlug);
-  return currentSlug;
-};
+import type { ParamsType } from '@/types/ApiData';
+import { buildPath } from '@/utils/buildUrl';
 
 const GetPage = async ({ params }: ParamsType) => {
   let apiUrl = `http://feat01-drupal8.dmz.local/eid/nb/api/rest/page?lang=${params.lang}`;
@@ -16,7 +10,21 @@ const GetPage = async ({ params }: ParamsType) => {
     apiUrl += buildPath(params.slug);
   }
   const response = await fetch(apiUrl);
-  return response;
+  if (!response.ok && response.status === 404) {
+    notFound();
+  }
+
+  const jsonData = await response.json();
+
+  if (jsonData.content.redirect) {
+    if (jsonData.content.redirect.status === '301') {
+      const destination: string = jsonData.content.redirect.destination;
+      const nyStreng: string = destination.replace(/\/eid\/nb\//, '');
+      redirect('/nb/' + nyStreng);
+    }
+  }
+
+  return jsonData;
 };
 
 export { GetPage };
