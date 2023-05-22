@@ -1,5 +1,5 @@
 .header {
-  height: 88px;
+  height: 80px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #dbdbdb;
@@ -15,4 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  display: block;
+  height: 26px;
 }
