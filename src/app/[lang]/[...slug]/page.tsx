@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { GetPage } from '@/services/PageService';
+
 import type { ApiDataType, ParamsType } from '@/types/ApiData';
 
 export default async function Page(params: ParamsType) {
