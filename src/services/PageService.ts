@@ -1,6 +1,6 @@
 import { notFound, redirect } from 'next/navigation';
 
-import type { ParamsType } from '@/types/ApiData';
+import type { ParamsType, ApiDataType } from '@/types/ApiData';
 import { buildPath } from '@/utils/buildUrl';
 
 const GetPage = async ({ params }: ParamsType) => {
@@ -14,13 +14,16 @@ const GetPage = async ({ params }: ParamsType) => {
     notFound();
   }
 
-  const jsonData = await response.json();
+  const jsonData: ApiDataType = (await response.json()) as ApiDataType;
 
   if (jsonData.content.redirect) {
     if (jsonData.content.redirect.status === '301') {
-      const destination: string = jsonData.content.redirect.destination;
-      const nyStreng: string = destination.replace(/\/eid\/nb\//, '');
-      redirect('/nb/' + nyStreng);
+      const destination: string | undefined =
+        jsonData.content.redirect.destination;
+      const nyStreng = destination?.replace(/\/eid\/nb\//, '');
+      if (typeof nyStreng === 'string') {
+        redirect(`/nb/${nyStreng}`);
+      }
     }
   }
 
