@@ -7,13 +7,7 @@ import Image from 'next/image';
 
 import classes from './Header.module.css';
 
-interface HeaderProps {
-  title?: string;
-  logo?: { alt: string; url: string };
-  items?: [React.ReactNode];
-}
-
-const HeaderLayout = ({ items }: HeaderProps) => {
+const HeaderLayout = () => {
   return (
     <Header>
       <Header.Left>
@@ -27,20 +21,8 @@ const HeaderLayout = ({ items }: HeaderProps) => {
           />
         </Link>
       </Header.Left>
-      <Header.Right>
-        {items}
-        <select
-          className='custom-select'
-          style={{ width: 200 }}
-        >
-          <option value='nb'>Norsk</option>
-          <option value='en'>English</option>
-          <option value='sa'>sámegiella</option>
-        </select>
-      </Header.Right>
     </Header>
   );
 };
 
-export type { HeaderProps };
 export { HeaderLayout };
