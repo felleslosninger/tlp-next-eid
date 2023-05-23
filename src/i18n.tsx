@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+/*import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 //Import all translation files
@@ -36,3 +36,4 @@ const changeLanguage = (language: string) => {
 };
 
 export { initializeLocalization, changeLanguage };
+*/
