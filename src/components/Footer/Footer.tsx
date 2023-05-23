@@ -22,14 +22,22 @@ const Footer = ({ children }: FooterProps) => {
       <Container className={classes.topContainer}>
         <div className={classes.topContent}>
           {React.Children.map(children, (child) => (
-            <>{child.type === Footer.Column ? child : ''}</>
+            <>
+              {React.isValidElement(child) && child.type === Footer.Column
+                ? child
+                : ''}
+            </>
           ))}
         </div>
       </Container>
       <Container className={classes.bottomContainer}>
         <div className={classes.bottomContent}>
           {React.Children.map(children, (child) => (
-            <>{child.type === Footer.Bottom ? child : ''}</>
+            <>
+              {React.isValidElement(child) && child.type === Footer.Column
+                ? child
+                : ''}
+            </>
           ))}
         </div>
       </Container>

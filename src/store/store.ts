@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import activePageReducer from './reducers/activePageReducer';
 
 const store = configureStore({

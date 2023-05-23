@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Container } from '../Container/Container';
-import { Heading } from '@digdir/design-system-react';
-import { Footer } from '@digdir/tlp-react';
+
+import { Footer } from '../Footer/Footer';
 
 import classes from './FooterLayout.module.css';
 
@@ -11,7 +10,7 @@ interface FooterLayoutProps {
   text?: string;
 }
 
-const FooterLayout = ({ text }: FooterLayoutProps) => {
+const FooterLayout = () => {
   return (
     <Footer>
       <Footer.Column>
