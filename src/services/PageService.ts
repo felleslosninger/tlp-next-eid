@@ -4,7 +4,7 @@ import type { ParamsType, ApiDataType } from '@/types/ApiData';
 import { buildPath } from '@/utils/buildUrl';
 
 const GetPage = async ({ params }: ParamsType) => {
-  let apiUrl = `http://feat01-drupal8.dmz.local/eid/nb/api/rest/page?lang=${params.lang}`;
+  let apiUrl = `http://feat01-drupal8.dmz.local/eid/${params.lang}/api/rest/page?`;
 
   if (params.slug !== undefined) {
     apiUrl += buildPath(params.slug);
