@@ -1,5 +1,8 @@
 {
   "tomat": "tomat",
   "PageTitle": "Hjelp og veiledning",
-  "searchPlaceholder": "søk..."
+  "searchPlaceholder": "søk...",
+  "This service is delivered by the Norwegian Digitalisation Agency": "Tjenesten er levert av Digitaliseringsdirektoratet",
+  "openingHours": "Åpningstider",
+  "epost": "E-post"
 }
