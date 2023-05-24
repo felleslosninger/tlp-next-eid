@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const nextTranslate = require('next-translate');
+const nextTranslate = require('next-translate-plugin');
 
 module.exports = nextTranslate({
-  reactStrictMode: true,
+  experimental: { appDir: true },
 });
-
-const nextConfig = {
-  reactStrictMode: true,
-  output: 'standalone',
-};
-
-module.exports = nextConfig;
