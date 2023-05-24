@@ -5,7 +5,7 @@ import { GetPage } from '@/services/PageService';
 import type { ApiDataType, ParamsType } from '@/types/ApiData';
 
 export default async function Page(params: ParamsType) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const data: ApiDataType = await GetPage(params);
 
   return (

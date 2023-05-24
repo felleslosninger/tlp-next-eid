@@ -1,17 +1,18 @@
 'use client';
-
+import useTranslation from 'next-translate/useTranslation';
 import React from 'react';
 import { MagnifyingGlassIcon } from '@navikt/aksel-icons';
 
 import classes from './Input.module.css';
 
 const Input = () => {
+  const { t } = useTranslation('common');
   return (
     <div className={classes.container}>
       <input
         className={classes.input}
         type='text'
-        placeholder='Søk her...'
+        placeholder={t`searchPlaceholder`}
       />
       <MagnifyingGlassIcon
         fontSize={24}
