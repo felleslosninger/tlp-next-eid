@@ -6,18 +6,19 @@ import '@altinn/figma-design-tokens/dist/tokens.css';
 import '@digdir/design-system-tokens/dist/digdir/tokens.css';
 import '@digdir/tlp-react/dist/tokens.css';
 import '../globals.css';
-import { Layout } from '@/layout/Layout';
 
 export default function RootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
+  console.log(lang);
   return (
-    <html lang='en'>
-      <body className={InterFont.className}>
-        <Layout>{children}</Layout>
-      </body>
+    <html lang={lang}>
+      <head />
+      <body className={InterFont.className}>{children}</body>
     </html>
   );
 }
