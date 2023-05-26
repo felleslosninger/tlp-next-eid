@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Container } from '@/components/Container/Container';
-
-import { FooterLayout } from '../components/FooterLayout/FooterLayout';
-import { HeaderLayout } from '../components/Header/Header';
-import { Sidebar } from '../components/Sidebar/Sidebar';
-import { Content } from '../components/Content/Content';
+import { Input } from '@/components/Input/Input';
+import { FooterLayout } from '@/components/FooterLayout/FooterLayout';
+import { HeaderLayout } from '@/components/Header/Header';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { Content } from '@/components/Content/Content';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +21,9 @@ const Layout = ({ children }: LayoutProps) => {
         <Container className={classes.container}>
           <div className={classes.wrapper}>
             <div className={classes.sidebar}>
+              <form>
+                <Input />
+              </form>
               <Sidebar />
             </div>
             <div className={classes.content}>

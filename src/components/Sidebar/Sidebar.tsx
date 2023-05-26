@@ -1,8 +1,9 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import cn from 'classnames';
-
-import { Input } from '../Input/Input';
 
 import classes from './Sidebar.module.css';
 
@@ -12,6 +13,14 @@ const Menu = [
       {
         text: 'ID-porten',
         href: '/nb/id-porten',
+      },
+      {
+        text: 'ID-porten engelsk',
+        href: '/en/id-porten',
+      },
+      {
+        text: 'Samisk',
+        href: '/se/id-porten',
       },
       {
         text: 'Search',
@@ -34,12 +43,9 @@ const Menu = [
 ];
 
 const Sidebar = () => {
+  const pathName = usePathname();
   return (
     <div>
-      <form>
-        <Input />
-      </form>
-
       {Menu.map((item, index) => (
         <ul
           key={index}
@@ -48,7 +54,9 @@ const Sidebar = () => {
           {item.items.map((item1, index1) => (
             <li
               key={index1}
-              className={cn(classes.item, {})}
+              className={cn(classes.item, {
+                [classes.active]: pathName === item1.href,
+              })}
             >
               <Link href={item1.href}>{item1.text}</Link>
             </li>

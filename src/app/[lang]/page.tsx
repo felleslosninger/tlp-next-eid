@@ -3,9 +3,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 import { GetPage } from '@/services/PageService';
 import type { ApiDataType, ParamsType } from '@/types/ApiData';
-
 import { Layout } from '@/layout/Layout';
-import { Sidebar } from '@/components/Sidebar/Sidebar';
 
 export default async function Page(params: ParamsType) {
   const { t } = useTranslation('common');
