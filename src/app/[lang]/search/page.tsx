@@ -1,18 +1,19 @@
-import Link from 'next/link';
 import React from 'react';
 
-export default function Home() {
+import { GetPage } from '@/services/PageService';
+import type { ApiDataType, ParamsType } from '@/types/ApiData';
+import { Layout } from '@/layout/Layout';
+
+import { getDictionary } from '../../../get-dictionary';
+
+export default async function IndexPage({ params }: ParamsType) {
+  const dictionary = await getDictionary(params.lang);
+  const data: ApiDataType = await GetPage(params.lang, params.slug);
+
   return (
-    <>
-      <h2>search</h2>
-      <ul>
-        <li>
-          <Link href='/nb'>FrontPage</Link>
-        </li>
-        <li>
-          <Link href='/nb/test'>Any</Link>
-        </li>
-      </ul>
-    </>
+    <Layout dictionary={dictionary}>
+      <h1>{data.content.node.title}</h1>
+      <p>{data.content.node.body}</p>
+    </Layout>
   );
 }

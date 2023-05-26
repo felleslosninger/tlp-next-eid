@@ -20,6 +20,9 @@ const HeaderLayout = () => {
             className={classes.logo}
           />
         </Link>
+        <Link href='nb'>Norsk</Link>
+        <Link href='se'>Samisk</Link>
+        <Link href='en'>Engelsk</Link>
       </Header.Left>
     </Header>
   );

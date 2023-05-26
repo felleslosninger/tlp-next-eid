@@ -1,23 +1,27 @@
 import React from 'react';
 
 import { InterFont } from '@/fonts/Interfont';
+import { i18n } from '../i18n-config';
 import 'normalize.css';
 import '@altinn/figma-design-tokens/dist/tokens.css';
 import '@digdir/design-system-tokens/dist/digdir/tokens.css';
 import '@digdir/tlp-react/dist/tokens.css';
 import '../globals.css';
-import { Layout } from '@/layout/Layout';
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+export default function Root({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
-    <html lang='en'>
-      <body className={InterFont.className}>
-        <Layout>{children}</Layout>
-      </body>
+    <html lang={params.lang}>
+      <body className={InterFont.className}>{children}</body>
     </html>
   );
 }

@@ -13,35 +13,47 @@ const Menu = [
   {
     items: [
       {
-        text: 'ID-porten',
-        href: '/nb/id-porten',
+        text: 'ID-porten NB',
+        href: 'nb/id-porten',
+      },
+      {
+        text: 'ID-porten EN',
+        href: 'en/id-porten',
+      },
+      {
+        text: 'ID-porten SE',
+        href: 'se/id-porten',
       },
       {
         text: 'Search',
-        href: '/nb/search',
+        href: '/search',
       },
       {
         text: 'Passport',
-        href: '/nb/minid-passport',
+        href: '/minid-passport',
       },
       {
         text: 'Not found',
-        href: '/nb/minid-passpgergregerort',
+        href: '/minid-passpgergregerort',
       },
       {
         text: 'Redirect',
-        href: '/nb/hva-er-mitt-einnsyn',
+        href: '/hva-er-mitt-einnsyn',
       },
     ],
   },
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  dictionary: Record<string, string>;
+}
+
+const Sidebar = ({ dictionary }: SidebarProps) => {
   const pathName = usePathname();
   return (
     <div>
       <form>
-        <Input />
+        <Input placeholder={dictionary.placeholder} />
       </form>
 
       {Menu.map((item, index) => (

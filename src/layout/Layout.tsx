@@ -9,11 +9,12 @@ import { Content } from '../components/Content/Content';
 
 interface LayoutProps {
   children: React.ReactNode;
+  dictionary: Record<string, string>;
 }
 
 import classes from './Layout.module.css';
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, dictionary }: LayoutProps) => {
   return (
     <div className={classes.layout}>
       <HeaderLayout />
@@ -21,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Container className={classes.container}>
           <div className={classes.wrapper}>
             <div className={classes.sidebar}>
-              <Sidebar />
+              <Sidebar dictionary={dictionary} />
             </div>
             <div className={classes.content}>
               <Content>{children}</Content>
