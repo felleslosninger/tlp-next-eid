@@ -1,8 +1,5 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import cn from 'classnames';
 
 import { Input } from '../Input/Input';
@@ -37,7 +34,6 @@ const Menu = [
 ];
 
 const Sidebar = () => {
-  const pathName = usePathname();
   return (
     <div>
       <form>
@@ -52,9 +48,7 @@ const Sidebar = () => {
           {item.items.map((item1, index1) => (
             <li
               key={index1}
-              className={cn(classes.item, {
-                [classes.active]: pathName === item1.href,
-              })}
+              className={cn(classes.item, {})}
             >
               <Link href={item1.href}>{item1.text}</Link>
             </li>

@@ -14,7 +14,6 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  console.log(lang);
   return (
     <html lang={lang}>
       <head />

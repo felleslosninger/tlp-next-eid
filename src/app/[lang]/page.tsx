@@ -8,7 +8,7 @@ import { Layout } from '@/layout/Layout';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
 
 export default async function Page(params: ParamsType) {
-  const { t, lang } = useTranslation('common');
+  const { t } = useTranslation('common');
   const data: ApiDataType = await GetPage(params);
 
   return (
