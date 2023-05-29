@@ -26,19 +26,19 @@ const Menu = [
       },
       {
         text: 'Search',
-        href: '/search',
+        href: 'nb/search',
       },
       {
         text: 'Passport',
-        href: '/minid-passport',
+        href: 'nb/minid-passport',
       },
       {
         text: 'Not found',
-        href: '/minid-passpgergregerort',
+        href: 'nb/minid-passpgergregerort',
       },
       {
         text: 'Redirect',
-        href: '/hva-er-mitt-einnsyn',
+        href: 'nb/hva-er-mitt-einnsyn',
       },
     ],
   },
