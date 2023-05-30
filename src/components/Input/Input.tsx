@@ -5,13 +5,18 @@ import { MagnifyingGlassIcon } from '@navikt/aksel-icons';
 
 import classes from './Input.module.css';
 
-const Input = (placeholder: string) => {
+interface InputProps {
+  placeholder: string;
+}
+
+const Input = ({ placeholder }: InputProps) => {
+  console.log(placeholder);
   return (
     <div className={classes.container}>
       <input
         className={classes.input}
         type='text'
-        placeholder={placeholder.placeholder}
+        placeholder={placeholder}
       />
       <MagnifyingGlassIcon
         fontSize={24}
