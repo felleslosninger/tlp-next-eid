@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { ParamsType } from '@/types/ApiData';
-import { Layout } from '@/layout/Layout';
+import { TemplateWrapper } from '@/templateWrapper/TemplateWrapper';
 import { validateAndGetLang } from '@/utils/validateAndGetLang';
 
 export default async function IndexPage({ params }: ParamsType) {
@@ -10,8 +10,8 @@ export default async function IndexPage({ params }: ParamsType) {
   const dictionary = await validateAndGetLang(lng);
 
   return (
-    <Layout dictionary={dictionary}>
-      <h1>Search</h1>
-    </Layout>
+    <TemplateWrapper dictionary={dictionary}>
+      <h1>søk</h1>
+    </TemplateWrapper>
   );
 }

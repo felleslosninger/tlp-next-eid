@@ -29,8 +29,8 @@ dependencies:
     specifier: ^0.0.3
     version: 0.0.3
   '@digdir/tlp-react':
-    specifier: ^0.1.5
-    version: 0.1.5(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: file:..\tlp-react\packages\react\digdir-tlp-react-0.1.5.tgz
+    version: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
   '@formatjs/intl-localematcher':
     specifier: 0.2.32
     version: 0.2.32
@@ -70,6 +70,9 @@ dependencies:
   '@typescript-eslint/parser':
     specifier: ^5.59.2
     version: 5.59.2(eslint@8.22.0)(typescript@5.0.4)
+  add:
+    specifier: ^2.0.6
+    version: 2.0.6
   babel-jest:
     specifier: ^29.5.0
     version: 29.5.0(@babel/core@7.21.8)
@@ -1698,21 +1701,6 @@ packages:
     resolution: {integrity: sha512-t1pTQ5Nenuq7MCWznTvN8iV/WNSCrWrW1jsqREY2KTzLeupP9kJv4EE0d3zHae0sGzr/jn0JvGFBns32oiNAmw==}
     dev: false
 
-  /@digdir/tlp-react@0.1.5(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-a/UWJ6DrM0QgcIiTPAdL9QRDEvhw39Ro+Z/TiEjpzWC7pbWSPLJyNmzMTOFTWZiHEBQGRul0m/bQ+NjFP79V1w==}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-    dependencies:
-      '@altinn/figma-design-tokens': 6.0.1
-      '@digdir/design-system-tokens': 0.0.3
-      '@navikt/ds-icons': 2.9.3(@types/react@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - '@types/react'
-    dev: false
-
   /@eslint-community/eslint-utils@4.4.0(eslint@8.22.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2809,6 +2797,10 @@ packages:
     resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  /add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
+    dev: false
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -7976,4 +7968,22 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jWK84F2My2t7fxa6XNbV+JwGN/1xMnhFkZsQXN3vvBFlitxY8iNaHftnTrUTZ9XLzSXPhf+b+N0hA7V3WWN4pQ==, tarball: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz}
+    id: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz
+    name: '@digdir/tlp-react'
+    version: 0.1.5
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@altinn/figma-design-tokens': 6.0.1
+      '@digdir/design-system-tokens': 0.0.3
+      '@navikt/ds-icons': 2.9.3(@types/react@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false

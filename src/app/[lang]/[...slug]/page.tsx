@@ -3,7 +3,7 @@ import React from 'react';
 import type { pageResponse } from '@/services/PageService';
 import { getPageData, handleResponse } from '@/services/PageService';
 import type { ParamsType, langType, slugType } from '@/types/ApiData';
-import { Layout } from '@/layout/Layout';
+import { TemplateWrapper } from '@/templateWrapper/TemplateWrapper';
 import { validateAndGetLang } from '@/utils/validateAndGetLang';
 
 export default async function IndexPage({ params }: ParamsType) {
@@ -14,9 +14,9 @@ export default async function IndexPage({ params }: ParamsType) {
   handleResponse(response, jsonData, lang);
 
   return (
-    <Layout dictionary={dictionary}>
+    <TemplateWrapper dictionary={dictionary}>
       <h1>{jsonData.content.node.title}</h1>
       <p>{jsonData.content.node.body}</p>
-    </Layout>
+    </TemplateWrapper>
   );
 }

@@ -1,20 +1,20 @@
 import React from 'react';
+import { Footer } from '@digdir/tlp-react';
 
 import { Container } from '@/components/Container/Container';
 
-import { FooterLayout } from '../components/FooterLayout/FooterLayout';
+//import { FooterLayout } from '../components/FooterLayout/FooterLayout';
 import { HeaderLayout } from '../components/Header/Header';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Content } from '../components/Content/Content';
 
-interface LayoutProps {
+interface TemplateProps {
   children: React.ReactNode;
   dictionary: Record<string, string>;
 }
 
 import classes from './Layout.module.css';
-
-const Layout = ({ children, dictionary }: LayoutProps) => {
+const TemplateWrapper = ({ children, dictionary }: TemplateProps) => {
   return (
     <div className={classes.layout}>
       <HeaderLayout />
@@ -30,9 +30,22 @@ const Layout = ({ children, dictionary }: LayoutProps) => {
           </div>
         </Container>
       </main>
-      <FooterLayout />
+      <Footer>
+        <Footer.Column>
+          <h2>Åpningstider</h2>
+        </Footer.Column>
+        <Footer.Column>
+          <h2>E-post</h2>
+        </Footer.Column>
+        <Footer.Column>
+          <h2>Viktige lenker</h2>
+        </Footer.Column>
+        <Footer.Bottom>
+          Tjenesten er levert av Digitaliseringsdirektoratet
+        </Footer.Bottom>
+      </Footer>
     </div>
   );
 };
 
-export { Layout };
+export { TemplateWrapper };
