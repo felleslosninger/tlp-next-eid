@@ -1,18 +1,17 @@
-import Link from 'next/link';
 import React from 'react';
 
-export default function Home() {
+import type { ParamsType } from '@/types/ApiData';
+import { Layout } from '@/layout/Layout';
+import { validateAndGetLang } from '@/utils/validateAndGetLang';
+
+export default async function IndexPage({ params }: ParamsType) {
+  const lng: string = params.lang;
+
+  const dictionary = await validateAndGetLang(lng);
+
   return (
-    <>
-      <h2>search</h2>
-      <ul>
-        <li>
-          <Link href='/nb'>FrontPage</Link>
-        </li>
-        <li>
-          <Link href='/nb/test'>Any</Link>
-        </li>
-      </ul>
-    </>
+    <Layout dictionary={dictionary}>
+      <h1>Search</h1>
+    </Layout>
   );
 }

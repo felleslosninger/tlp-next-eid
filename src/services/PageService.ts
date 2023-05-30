@@ -1,13 +1,12 @@
 import { notFound, redirect } from 'next/navigation';
 
-import type { ParamsType, ApiDataType } from '@/types/ApiData';
+import type { ApiDataType } from '@/types/ApiData';
 import { buildPath } from '@/utils/buildUrl';
 
-const GetPage = async ({ params }: ParamsType) => {
-  let apiUrl = `http://feat01-drupal8.dmz.local/eid/nb/api/rest/page?lang=${params.lang}`;
-
-  if (params.slug !== undefined) {
-    apiUrl += buildPath(params.slug);
+const GetPage = async (lang: string, slug: string[]) => {
+  let apiUrl = `http://feat01-drupal8.dmz.local/eid/${lang}/api/rest/page?`;
+  if (slug !== undefined) {
+    apiUrl += buildPath(slug);
   }
   const response = await fetch(apiUrl);
   if (!response.ok && response.status === 404) {
@@ -22,7 +21,7 @@ const GetPage = async ({ params }: ParamsType) => {
         jsonData.content.redirect.destination;
       const nyStreng = destination?.replace(/\/eid\/nb\//, '');
       if (typeof nyStreng === 'string') {
-        redirect(`/nb/${nyStreng}`);
+        redirect(`/${lang}/${nyStreng}`);
       }
     }
   }
