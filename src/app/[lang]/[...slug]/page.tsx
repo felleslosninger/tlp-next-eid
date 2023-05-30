@@ -3,12 +3,12 @@ import React from 'react';
 import { GetPage } from '@/services/PageService';
 import type { ApiDataType, ParamsType } from '@/types/ApiData';
 import { Layout } from '@/layout/Layout';
-
-import { getDictionary } from '../../../get-dictionary';
+import { validateAndGetLang } from '@/utils/validateAndGetLang';
 
 export default async function IndexPage({ params }: ParamsType) {
-  const dictionary = await getDictionary(params.lang);
-  const data: ApiDataType = await GetPage(params.lang, params.slug);
+  const lng: string = params.lang;
+  const dictionary = await validateAndGetLang(lng);
+  const data: ApiDataType = await GetPage(lng, params.slug);
 
   return (
     <Layout dictionary={dictionary}>

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { InterFont } from '@/fonts/Interfont';
 
-//import { i18n } from '../i18n-config';
 import 'normalize.css';
 import '@altinn/figma-design-tokens/dist/tokens.css';
 import '@digdir/design-system-tokens/dist/digdir/tokens.css';

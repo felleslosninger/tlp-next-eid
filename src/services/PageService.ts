@@ -3,7 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 import type { ApiDataType } from '@/types/ApiData';
 import { buildPath } from '@/utils/buildUrl';
 
-const GetPage = async (lang: string, slug: []) => {
+const GetPage = async (lang: string, slug: string[]) => {
   let apiUrl = `http://feat01-drupal8.dmz.local/eid/${lang}/api/rest/page?`;
   if (slug !== undefined) {
     apiUrl += buildPath(slug);
