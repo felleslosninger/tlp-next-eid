@@ -23,6 +23,9 @@ export type ApiDataType = {
   };
 };
 
+export type langType = 'en' | 'no' | 'se';
+export type slugType = string[];
+
 export interface ParamsType {
-  params: { slug: string[]; lang: string };
+  params: { slug: string[]; lang: langType };
 }
