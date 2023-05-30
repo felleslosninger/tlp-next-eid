@@ -41,7 +41,10 @@ const TemplateWrapper = ({ children, dictionary }: TemplateProps) => {
           <h2>Viktige lenker</h2>
         </Footer.Column>
         <Footer.Bottom>
-          Tjenesten er levert av Digitaliseringsdirektoratet
+          <a href='https://uustatus.no/nn/erklaringer/publisert/3ceb57cc-b2db-46a3-9a71-b78c8779173f'>
+            Tilgjengelighetserklæring
+          </a>
+          <p>Tjenesten er levert av Digitaliseringsdirektoratet</p>
         </Footer.Bottom>
       </Footer>
     </div>
