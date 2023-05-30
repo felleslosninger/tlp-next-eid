@@ -10,7 +10,7 @@
     "lint:all": "eslint .",
     "lint:style": "stylelint  \"**/*.css\"",
     "test": "jest",
-    "get-tlp-react-pack": "pnpm add ../tlp-react/packages/react/digdir-tlp-react-*.tgz"
+    "get-tlp-react-pack": "node ./scripts/get-tlp-react-pack.js"
   },
   "dependencies": {
     "@altinn/figma-design-tokens": "^6.0.1",

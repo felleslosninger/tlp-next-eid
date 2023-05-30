@@ -7971,7 +7971,7 @@ packages:
     dev: false
 
   file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-jWK84F2My2t7fxa6XNbV+JwGN/1xMnhFkZsQXN3vvBFlitxY8iNaHftnTrUTZ9XLzSXPhf+b+N0hA7V3WWN4pQ==, tarball: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz}
+    resolution: {integrity: sha512-7RwIMre+YcDMMx4ejgaj3or4yXI5pZpsFOymIFivsDOad+S0kDs7LgFU8T9i7D5XpAoaAdO8EhcXXqmgl/xWcA==, tarball: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz}
     id: file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz
     name: '@digdir/tlp-react'
     version: 0.1.5
