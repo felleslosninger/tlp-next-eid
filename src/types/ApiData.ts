@@ -27,5 +27,10 @@ export type langType = 'en' | 'no' | 'se';
 export type slugType = string[];
 
 export interface ParamsType {
-  params: { slug: string[]; lang: langType };
+  slug: slugType;
+  lang: langType;
+}
+
+export interface PageParamsType {
+  params: ParamsType;
 }

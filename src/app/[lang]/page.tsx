@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { getPageData, handleResponse } from '@/services/PageService';
-import type { ParamsType, langType, slugType } from '@/types/ApiData';
+import type { PageParamsType, langType, slugType } from '@/types/ApiData';
 import type { pageResponse } from '@/services/PageService';
 import { Layout } from '@/layout/Layout';
 import { validateAndGetLang } from '@/utils/validateAndGetLang';
 
-export default async function IndexPage({ params }: ParamsType) {
+export default async function IndexPage({ params }: PageParamsType) {
   const lang: langType = params.lang;
   const slug: slugType = params.slug;
   const dictionary = await validateAndGetLang(lang);
@@ -14,7 +14,10 @@ export default async function IndexPage({ params }: ParamsType) {
   handleResponse(response, jsonData, lang);
 
   return (
-    <Layout dictionary={dictionary}>
+    <Layout
+      dictionary={dictionary}
+      data={jsonData}
+    >
       <h1>{jsonData.content.node.title}</h1>
       <p>{jsonData.content.node.body}</p>
     </Layout>
