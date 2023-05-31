@@ -14,8 +14,9 @@ type pageResponse = {
  * @param slug Slug array
  * @returns
  */
+
 const getPageData = async (lang: langType, slug: string[]) => {
-  let apiUrl = `http://feat01-drupal8.dmz.local/eid/${lang}/api/rest/page?`;
+  let apiUrl = `https://tlp-site-eid-dev.digdir.no/${lang}/api/rest/page?`;
   if (slug !== undefined) {
     apiUrl += buildPath(slug);
   }

@@ -2,11 +2,8 @@ import React from 'react';
 
 import type { pageResponse } from '@/services/PageService';
 import { getPageData, handleResponse } from '@/services/PageService';
-
 import type { langType, slugType, PageParamsType } from '@/types/ApiData';
-
 import { TemplateWrapper } from '@/templateWrapper/TemplateWrapper';
-
 import { validateAndGetLang } from '@/utils/validateAndGetLang';
 
 export default async function IndexPage({ params }: PageParamsType) {
