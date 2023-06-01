@@ -8,6 +8,7 @@ import { Container } from '@/components/Container/Container';
 import { HeaderLayout } from '../components/Header/Header';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Content } from '../components/Content/Content';
+import { AdminBar } from '@/components/AdminBar/AdminBar';
 
 import classes from './Layout.module.css';
 
@@ -17,9 +18,16 @@ type TemplateProps = {
   data: ApiDataType;
 };
 
+
 const TemplateWrapper = ({ children, dictionary, data }: TemplateProps) => {
+
+  console.log(data.auth)
+
   return (
     <div className={classes.layout}>
+      {data.auth.authenticated && (
+        <AdminBar></AdminBar>
+      )}
       <HeaderLayout />
       <main className={classes.main}>
         {data.content.node.title}

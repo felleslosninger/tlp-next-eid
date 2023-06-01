@@ -1,4 +1,7 @@
 export type ApiDataType = {
+  auth: {
+    authenticated: boolean
+  }
   content: {
     redirect?: {
       source?: string;
