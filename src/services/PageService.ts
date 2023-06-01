@@ -1,5 +1,6 @@
 import { notFound, redirect } from 'next/navigation';
 
+import { getAPIURL } from '@/middleware';
 import type { ApiDataType, langType } from '@/types/ApiData';
 import { buildPath } from '@/utils/buildUrl';
 
@@ -16,7 +17,10 @@ type pageResponse = {
  */
 
 const getPageData = async (lang: langType, slug: string[]) => {
-  let apiUrl = `https://tlp-site-eid-dev.digdir.no/${lang}/api/rest/page?`;
+  console.log(getAPIURL());
+  const api: string = getAPIURL();
+
+  let apiUrl = `https://${api}/${lang}/api/rest/page?`;
   if (slug !== undefined) {
     apiUrl += buildPath(slug);
   }

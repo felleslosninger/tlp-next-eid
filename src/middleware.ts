@@ -14,10 +14,22 @@ function getLocale(request: NextRequest): string | undefined {
   return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
+let APIURL: string | null = 'tlp-site-eid-dev.digdir.no/';
+
+const setAPIURL = (request: NextRequest) => {
+  if (typeof request.headers.get('host') === 'string') {
+    APIURL = request.headers.get('host');
+  }
+};
+
+export function getAPIURL() {
+  return APIURL;
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-
-  const APIURL = request.headers.get('host');
+  setAPIURL(request);
+  console.log(APIURL);
 
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
