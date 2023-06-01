@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer } from '@digdir/tlp-react';
+import { Footer, Link } from '@digdir/tlp-react';
 
 import type { ApiDataType } from '@/types/ApiData';
 import { Container } from '@/components/Container/Container';
@@ -46,11 +46,14 @@ const TemplateWrapper = ({ children, dictionary, data }: TemplateProps) => {
         </Footer.Column>
         <Footer.Column>
           <h2>Viktige lenker</h2>
+          <Link
+            inverted={true}
+            href='https://uustatus.no/nn/erklaringer/publisert/3ceb57cc-b2db-46a3-9a71-b78c8779173f'
+          >
+            Tilgjengelighetserklæring
+          </Link>
         </Footer.Column>
         <Footer.Bottom>
-          <a href='https://uustatus.no/nn/erklaringer/publisert/3ceb57cc-b2db-46a3-9a71-b78c8779173f'>
-            Tilgjengelighetserklæring
-          </a>
           <p>Tjenesten er levert av Digitaliseringsdirektoratet</p>
         </Footer.Bottom>
       </Footer>
