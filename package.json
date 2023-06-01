@@ -22,7 +22,7 @@
     "@commitlint/config-conventional": "^17.6.3",
     "@digdir/design-system-react": "^0.12.0",
     "@digdir/design-system-tokens": "^0.0.3",
-    "@digdir/tlp-react": "file:..\\tlp-react\\packages\\react\\digdir-tlp-react-0.1.5.tgz",
+    "@digdir/tlp-react": "file:../tlp-react/packages/react/digdir-tlp-react-0.1.5.tgz",
     "@formatjs/intl-localematcher": "0.2.32",
     "@navikt/aksel-icons": "^2.9.3",
     "@reduxjs/toolkit": "^1.9.5",

@@ -30,8 +30,8 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   setAPIURL(request);
 
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('host', APIURL)
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('host', APIURL);
 
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
@@ -51,10 +51,9 @@ export function middleware(request: NextRequest) {
   }
   return NextResponse.next({
     request: {
-
       headers: requestHeaders,
     },
-  })
+  });
 }
 
 export const config = {

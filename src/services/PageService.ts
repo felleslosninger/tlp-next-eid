@@ -17,7 +17,7 @@ type pageResponse = {
  */
 
 const getPageData = async (lang: langType, slug: string[], host: string) => {
-  console.log(host)
+  console.log('test', host);
   let apiUrl = `https://${host}/${lang}/api/rest/page?`;
   if (slug !== undefined) {
     apiUrl += buildPath(slug);

@@ -13,7 +13,11 @@ export default async function IndexPage({ params }: PageParamsType) {
   const dictionary = await validateAndGetLang(lang);
   const headersList = headers();
   const host = headersList.get('host');
-  const { response, jsonData }: pageResponse = await getPageData(lang, slug, host);
+  const { response, jsonData }: pageResponse = await getPageData(
+    lang,
+    slug,
+    host,
+  );
   handleResponse(response, jsonData, lang);
 
   return (

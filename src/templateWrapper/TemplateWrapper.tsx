@@ -18,16 +18,12 @@ type TemplateProps = {
   data: ApiDataType;
 };
 
-
 const TemplateWrapper = ({ children, dictionary, data }: TemplateProps) => {
-
-  console.log(data.auth)
+  console.log(data.auth);
 
   return (
     <div className={classes.layout}>
-      {data.auth.authenticated && (
-        <AdminBar></AdminBar>
-      )}
+      {data.auth.authenticated && <AdminBar></AdminBar>}
       <HeaderLayout />
       <main className={classes.main}>
         {data.content.node.title}
@@ -48,9 +44,14 @@ const TemplateWrapper = ({ children, dictionary, data }: TemplateProps) => {
       <Footer>
         <Footer.Column>
           <h2>Åpningstider</h2>
+          <p>test</p>
+          <p>test</p>
+          <p>testdewdewewdewdewdewdew dewdfewfwef fwewf </p>
         </Footer.Column>
         <Footer.Column>
           <h2>E-post</h2>
+          <p>test</p>
+          <p>test</p>
         </Footer.Column>
         <Footer.Column>
           <h2>Viktige lenker</h2>
